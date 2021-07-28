@@ -1,0 +1,36 @@
+﻿
+@model EnviBin.Web.Site.Areas.Identity.Pages.Account.PersonalDetailsModel
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+
+<h2>@ViewData["Title"]</h2>
+
+<div class="page-header">
+    <div class="container-fluid">
+        <h1>Account Information</h1>
+    </div>
+</div>
+<div class="page-header">
+    <div class="container-fluid">
+        <h1>Login Portal</h1>
+    </div>
+</div>
+<div class="page-content">
+    <div class="page-content-inner">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3">
+                    <div class="dashboard-col dc-text"> @UserManager.GetUserName(User)</div>
+                    <div class="dashboard-col dc-category"> @UserManager.GetUserId(User)</div>
+                  </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
